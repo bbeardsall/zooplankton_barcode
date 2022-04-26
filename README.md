@@ -5,13 +5,14 @@ Required packages: `bold`, `seqinr`, `tidyverse`, `optparse`
 
 Retrieve Cytochrome c oxidase subunit I sequences from BOLD (Barcode Of Life Data System).
 
-Arguments:
--`-i`: Path to species xlsx file. Must have a "Species" column.  
--`-g`: Group to subset.
--`-o': Directory to save sequences in.
--`-m`: Max number of sequences per species to retrieve. Defaults to all.
+Arguments:  
+`-i`: Path to species xlsx file. Must have a "Species" column.  
+`-g`: Group to subset.  
+`-o`: Directory to save sequences in.  
+`-m`: Max number of sequences per species to retrieve. Defaults to all.  
 
-Example use:  
+Example use:
+Navigate to the zooplankton_barcode directory in a terminal.  
 `Rscript get_bold_seqs.R -i data/species.xlsx -o test_out -g Salpida -m 1`
 
 To view help, run:  
