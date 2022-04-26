@@ -30,7 +30,7 @@ write_species_df_fasta <- function(species_df, output_dir) {
       species_df$nucleotides[i],
       species_df$fasta_name[i],
       file.out = file.path(output_dir,
-                           paste(species_df$fasta_name[i], ".fn", sep = ''))
+                           paste(species_df$fasta_name[i], ".fasta", sep = ''))
     )
   }
 }

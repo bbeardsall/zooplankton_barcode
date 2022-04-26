@@ -66,9 +66,9 @@ for (taxon_name in unique_species) {
 
 system2(
   "cat",
-  args = file.path(individual_seq_dir, "*.fn"),
+  args = file.path(individual_seq_dir, "*.fasta"),
   stdout = file.path(
     args$output_dir,
-    paste(args$group, '_combined_seqs.fn', sep = "")
+    paste(args$group, '_combined_seqs.fasta', sep = "")
   )
 )
