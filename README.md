@@ -12,7 +12,7 @@ To view help, run:
 `Rscript get_bold_seqs.R -h`
 
 
-## Alignment with MEGA 11
+## Analysis with MEGA 11
 Download MEGA 11 from https://www.megasoftware.net/.
 
 ### Alignment
@@ -25,3 +25,14 @@ Download MEGA 11 from https://www.megasoftware.net/.
 - Once the alignment finishes, delete overhanging sequences.
 - Save alignment as a '.mas' file.
 - Close alignment window.
+
+## Choose DNA evolution model
+- Open the '.mas' file, choose "Analyze".
+- Yes to protein coding.
+- "Models" -> "Find Best Protein/DNA Model"
+- The model with the lowest BIC score is the best fit. Note any "+" items in the name, and their parameter values. E.g. +G means gamma distributed rate, with parameter value in a (+G) column.
+
+## Compute Pairwise Distance Matrix
+- "Distance" -> "Compute Pairwise Distances" 
+- Use active data.
+Use ~300 bootstrap replicates, and the best fit model (with gamma distributed rates if applicable).
