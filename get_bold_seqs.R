@@ -4,24 +4,33 @@ suppressPackageStartupMessages(library(tidyverse))
 source('src/bold_seq_functions.R')
 library(optparse)
 
-parser <- OptionParser()
-parser <-
-  add_option(
-    parser,
-    c('-i', '--input_excel', help = 'Path to species xlsx file', default =
-        'data/species.xlsx')
-  )
-parser <-
-  add_option(
-    parser,
-    c('-o', '--output_dir', help = 'Directory to save sequences', default =
-        'out_sequences')
-  )
+DESCRIPTION = "
+Script to download sequences from BOLD (BARCODE OF LIFE DATA SYSTEM)
+Example use:
+Rscript -i data/species.xlsx -o test_out -g Salpida -m 10
+"
+
+parser <- OptionParser(description = DESCRIPTION)
 parser <-
   add_option(parser,
-             c("-g", '--group', type = 'character', help = 'Group to subset'))
+             c('-i', '--input_excel'),
+             help = 'Path to species xlsx file.',
+             default =
+               'data/species.xlsx')
 parser <-
-  add_option(parser, c("-m", "--max_sequences"), type = 'integer')
+  add_option(parser,
+             c('-o', '--output_dir'),
+             help = 'Directory to save sequences.',
+             default =
+               'out_sequences')
+parser <-
+  add_option(parser,
+             c("-g", '--group'), type = 'character', help = 'Group to subset, e.g. Salpida')
+parser <-
+  add_option(parser,
+             c("-m", "--max_sequences"),
+             type = 'integer',
+             help = 'Maximum number of sequences to retrieve per species. Default is all.')
 
 args <- parse_args(parser)
 
