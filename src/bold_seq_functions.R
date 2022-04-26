@@ -1,5 +1,3 @@
-library(tidyverse)
-
 filter_seqspec_results <- function(result_df, n_results = NULL) {
   result_df <- result_df %>%
     {
@@ -9,7 +7,7 @@ filter_seqspec_results <- function(result_df, n_results = NULL) {
         .
     } %>%
     filter(markercode == 'COI-5P') %>%
-    mutate_all( ~ str_replace_na(., '')) %>%
+    mutate_all(~ str_replace_na(., '')) %>%
     mutate(
       fasta_name = paste(
         species_name,
