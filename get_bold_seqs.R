@@ -35,7 +35,7 @@ dir.create(individual_seq_dir,
            showWarnings = FALSE,
            recursive = TRUE)
 
-for (taxon_name in unique_species[1:3]) {
+for (taxon_name in unique_species) {
   if (error_fetching_specimen(taxon_name)) {
     warning(paste('Taxon "', taxon_name, '" not found.', sep = ""))
     next
